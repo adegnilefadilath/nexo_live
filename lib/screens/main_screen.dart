@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../widgets/header.dart';
 import 'home_screen.dart';
+import 'explore_screen.dart';
+import 'trending_screen.dart';
+import 'profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -33,9 +36,9 @@ class _MainScreenState extends State<MainScreen> {
                 },
                 children: const [
                   HomeScreen(),
-                  Center(child: Text('Page 2 - Explore', style: TextStyle(color: Colors.white))),
-                  Center(child: Text('Page 3 - Trending', style: TextStyle(color: Colors.white))),
-                  Center(child: Text('Page 4 - Profile', style: TextStyle(color: Colors.white))),
+                  ExploreScreen(),
+                  TrendingScreen(),
+                  ProfileScreen(),
                 ],
               ),
             ),

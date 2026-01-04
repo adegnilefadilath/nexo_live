@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/header.dart';
+import 'home_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,19 +16,31 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        children: const [
-          Center(child: Text('Page 1 - Home', style: TextStyle(color: Colors.white))),
-          Center(child: Text('Page 2 - Explore', style: TextStyle(color: Colors.white))),
-          Center(child: Text('Page 3 - Trending', style: TextStyle(color: Colors.white))),
-          Center(child: Text('Page 4 - Profile', style: TextStyle(color: Colors.white))),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            const Header(),
+            
+            // Contenu
+            Expanded(
+              child: PageView(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                children: const [
+                  HomeScreen(),
+                  Center(child: Text('Page 2 - Explore', style: TextStyle(color: Colors.white))),
+                  Center(child: Text('Page 3 - Trending', style: TextStyle(color: Colors.white))),
+                  Center(child: Text('Page 4 - Profile', style: TextStyle(color: Colors.white))),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

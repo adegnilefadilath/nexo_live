@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/main_screen.dart';
+import 'utils/app_theme.dart';
 
 void main() {
   runApp(const NEXOLiveApp());
@@ -13,14 +14,7 @@ class NEXOLiveApp extends StatelessWidget {
     return MaterialApp(
       title: 'NEXO Live',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        scaffoldBackgroundColor: const Color(0xFF0F172A),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF0F172A),
-          elevation: 0,
-        ),
-      ),
+      theme: AppTheme.darkTheme,
       home: const MainScreen(),
     );
   }

@@ -1,0 +1,33 @@
+# Flutter
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Android
+/android/
+/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+
+# iOS
+/ios/
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/flutter_export_environment.sh
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Fichiers personnels
+*.log
+*.tmp
+*.temp
+
+# Coverage
+coverage/
